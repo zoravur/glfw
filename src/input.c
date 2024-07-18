@@ -330,7 +330,7 @@ void _glfwInputChar(_GLFWwindow* window, uint32_t codepoint, int mods, GLFWbool 
 
 // Notifies shared code of a scroll event
 //
-void _glfwInputScroll(_GLFWwindow* window, double xoffset, double yoffset)
+void _glfwInputScroll(_GLFWwindow* window, double xoffset, double yoffset, int mods)
 {
     assert(window != NULL);
     assert(xoffset > -FLT_MAX);
@@ -339,7 +339,7 @@ void _glfwInputScroll(_GLFWwindow* window, double xoffset, double yoffset)
     assert(yoffset < FLT_MAX);
 
     if (window->callbacks.scroll)
-        window->callbacks.scroll((GLFWwindow*) window, xoffset, yoffset);
+        window->callbacks.scroll((GLFWwindow*) window, xoffset, yoffset, mods);
 }
 
 // Notifies shared code of a mouse button click event

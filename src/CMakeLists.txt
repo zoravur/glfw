@@ -50,6 +50,7 @@ if (GLFW_BUILD_X11)
                                 glx_context.c)
 endif()
 
+set(GLFW_BUILD_WAYLAND OFF)
 if (GLFW_BUILD_WAYLAND)
     target_compile_definitions(glfw PRIVATE _GLFW_WAYLAND)
     target_sources(glfw PRIVATE wl_platform.h xkb_unicode.h wl_init.c

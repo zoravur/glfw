@@ -1861,6 +1861,8 @@ typedef void (* GLFWcursorenterfun)(GLFWwindow* window, int entered);
  *  @param[in] window The window that received the event.
  *  @param[in] xoffset The scroll offset along the x-axis.
  *  @param[in] yoffset The scroll offset along the y-axis.
+ *  @param[in] mods Bit field describing which [modifier keys](@ref mods) were
+ *  held down.
  *
  *  @sa @ref scrolling
  *  @sa @ref glfwSetScrollCallback
@@ -1869,7 +1871,7 @@ typedef void (* GLFWcursorenterfun)(GLFWwindow* window, int entered);
  *
  *  @ingroup input
  */
-typedef void (* GLFWscrollfun)(GLFWwindow* window, double xoffset, double yoffset);
+typedef void (* GLFWscrollfun)(GLFWwindow* window, double xoffset, double yoffset, int mods);
 
 /*! @brief The function pointer type for keyboard key callbacks.
  *
